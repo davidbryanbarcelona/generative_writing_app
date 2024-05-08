@@ -21,7 +21,16 @@ async def generate_response(question, context):
 
 
 async def app():
-  st.title("OpenAI Text Generation App")
+  st.title("Creative Writing Assistant App")
+    
+    text = """David Bryan S. Barcelona\n\n
+    CCS 229 - Intelligent Systems
+    College of Information and Communications Technology
+    West Visayas State University"""
+    st.text(text)
+
+    # st.image('')
+
 
   # Text area input for the context
   context = st.text_area("Enter the context:")
