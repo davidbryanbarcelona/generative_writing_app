@@ -11,7 +11,7 @@ client = AsyncOpenAI(
 )
 
 async def generate_response(question, context):
-  model = "gpt-4-0125-preview"
+  model = "gpt-3.5-turbo"
   #model - "gpt-3.5-turbo"
 
   completion = await client.chat.completions.create(model=model, 
