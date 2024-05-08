@@ -30,7 +30,7 @@ async def app():
  
 
   st.title("Creative Writing Assistant App")
-  st.image('write_ai.png', width=450) 
+  st.image('write_ai.png', width=350) 
 
 
   # Text area input for the context
