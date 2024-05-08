@@ -21,7 +21,6 @@ async def generate_response(question, context):
 
 
 async def app():
-  st.title("Creative Writing Assistant App")
     
   text = """David Bryan S. Barcelona\n\n
   CCS 229 - Intelligent Systems
@@ -29,6 +28,9 @@ async def app():
   West Visayas State University"""
   st.text(text)
   # st.image('')
+
+  st.title("Creative Writing Assistant App")
+    
 
 
   # Text area input for the context
