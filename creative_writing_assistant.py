@@ -27,10 +27,10 @@ async def app():
   College of Information and Communications Technology
   West Visayas State University"""
   st.text(text)
-  st.image('write_ai.png')
+ 
 
   st.title("Creative Writing Assistant App")
-    
+  st.image('write_ai.png', width=25, height=25) 
 
 
   # Text area input for the context
