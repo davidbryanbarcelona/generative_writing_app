@@ -32,8 +32,8 @@ async def app():
   st.title("Creative Writing Assistant App")
   st.image('write_ai.png', width=350)
     
-  # Text input for user question
-  question = st.text_input("What is the setting and what are the plot keywords for your literary?")
+  # Text input for initialization of the setting and plot keywords
+  initiate = st.text_input("List the possible setting in your mind and the plot keywords:")
    
   # User selects the type of literature to generate
   genre = st.selectbox(
