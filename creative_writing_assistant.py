@@ -35,7 +35,7 @@ async def app():
    # User selects the type of literature to generate
   literature_type = st.selectbox(
       "Select the type of literature you want to generate:",
-      ["Poetry", "Short Story", "Dialogue"]
+      ["Poetry", "Drama", "Fiction", "Non-Fiction", "Folklore"]
   )
 
   # Text area input for the context
