@@ -10,13 +10,13 @@ client = AsyncOpenAI(
     api_key=st.secrets["API_key"],
 )
 
-async def generate_response(question, context):
+async def generate_response(question, genre, prompt):
   model = "gpt-3.5-turbo"
   #model - "gpt-3.5-turbo"
 
   completion = await client.chat.completions.create(model=model, 
       messages=[{"role": "user", "content": question}, 
-                {"role": "system", "content": context},
+                {"role": "system", "content": genre},
                 {"role": "system", "content": prompt}])
   return completion.choices[0].message.content
 
@@ -37,21 +37,21 @@ async def app():
   question = st.text_input("Hi, I'm your Creative Writing Assitant! How can I help your literary?")
    
   # User selects the type of literature to generate
-  context = st.selectbox(
+  genre = st.selectbox(
       "Select the type of literature you want to generate:",
       ["Poetry", "Drama", "Fiction", "Non-Fiction", "Folklore"]
   )
 
   prompt = ""
-  if context == "Poetry":
+  if genre == "Poetry":
       prompt = "Write a poetry about"
-  elif context == "Drama":
+  elif genre == "Drama":
       prompt = "Write a drama story about"
-  elif context == "Fiction":
+  elif genre == "Fiction":
       prompt = "Write a fictional story about"
-  elif context == "Non-Fiction":
+  elif genre == "Non-Fiction":
       prompt = "Write a non-fictional story about"
-  elif context == "Folklore":
+  elif genre == "Folklore":
       prompt = "Write a folklore story about"
 
   # Text area input for describing the literary
@@ -60,7 +60,7 @@ async def app():
   # Button to generate response
   if st.button("Generate Response"):
       if question and context:
-          response = await generate_response(question, context, prompt)
+          response = await generate_response(question, genre, prompt)
           st.write("Response:")
           st.write(response)
       else:
