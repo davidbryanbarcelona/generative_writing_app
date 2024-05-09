@@ -1,1 +1,1 @@
-# generative_writing_app
+# creative_writing_assitant_app
