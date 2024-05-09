@@ -10,13 +10,13 @@ client = AsyncOpenAI(
     api_key=st.secrets["API_key"],
 )
 
-async def generate_response(question, genre):
+async def generate_response(question, context):
   model = "gpt-3.5-turbo"
   #model - "gpt-3.5-turbo"
 
   completion = await client.chat.completions.create(model=model, 
       messages=[{"role": "user", "content": question}, 
-                {"role": "system", "content": genre}])
+                {"role": "system", "content": context])
   return completion.choices[0].message.content
 
 
@@ -37,12 +37,12 @@ async def app():
    
   # User selects the type of literature to generate
     # Text input for user question
-  genre = st.text_input("Enter the genre of the literary you want to write:")
+  context = st.text_input("Enter the genre of the literary you want to write:")
   
   # Button to generate response
   if st.button("Generate Response"):
-      if question and genre:
-          response = await generate_response(question, genre)
+      if question and context:
+          response = await generate_response(question, context)
           st.write("Response:")
           st.write(response)
       else:
