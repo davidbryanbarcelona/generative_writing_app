@@ -43,7 +43,7 @@ async def app():
   if st.button("Generate Response"):
       if question and context:
           response = await generate_response(question, context)
-          st.write("Response:")
+          st.write("Here is the generated literary:")
           st.write(response)
       else:
           st.error("Please enter both fields.")
