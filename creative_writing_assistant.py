@@ -31,15 +31,17 @@ async def app():
 
   st.title("Creative Writing Assistant App")
   st.image('write_ai.png', width=350)
-
+    
+  # Text area input for the context
+  context = st.text_area("Enter the context:")
+    
    # User selects the type of literature to generate
   literature_type = st.selectbox(
       "Select the type of literature you want to generate:",
       ["Poetry", "Drama", "Fiction", "Non-Fiction", "Folklore"]
   )
 
-  # Text area input for the context
-  context = st.text_area("Enter the context:")
+
 
 
   # Text input for user question
