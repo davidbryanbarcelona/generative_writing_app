@@ -33,24 +33,24 @@ async def app():
   st.image('write_ai.png', width=350)
     
   # Text input for initialization of the setting and plot keywords
-  question = st.text_input("List the possible setting in your mind and the plot keywords:")
+  question = st.text_input("Hi, I'm your Creative Writing Assitant! How can I help your literary?")
    
   # User selects the type of literature to generate
-  genre = st.selectbox(
+  context = st.selectbox(
       "Select the type of literature you want to generate:",
       ["Poetry", "Drama", "Fiction", "Non-Fiction", "Folklore"]
   )
 
   prompt = ""
-  if genre == "Poetry":
+  if context == "Poetry":
       prompt = "Write a poetry about"
-  elif genre == "Drama":
+  elif context == "Drama":
       prompt = "Write a drama story about"
-  elif genre == "Fiction":
+  elif context == "Fiction":
       prompt = "Write a fictional story about"
-  elif genre == "Non-Fiction":
+  elif context == "Non-Fiction":
       prompt = "Write a non-fictional story about"
-  elif genre == "Folklore":
+  elif context == "Folklore":
       prompt = "Write a folklore story about"
 
   # Text area input for describing the literary
