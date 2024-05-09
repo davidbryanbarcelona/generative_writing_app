@@ -32,34 +32,38 @@ async def app():
   st.title("Creative Writing Assistant App")
   st.image('write_ai.png', width=350)
     
-  # Text area input for describing the literary
-  desccribe = st.text_area("Describe the literary you want to write:")
-    
-   # User selects the type of literature to generate
+  # Text input for user question
+  question = st.text_input("What is the setting and what are the plot keywords for your literary?")
+   
+  # User selects the type of literature to generate
   genre = st.selectbox(
       "Select the type of literature you want to generate:",
       ["Poetry", "Drama", "Fiction", "Non-Fiction", "Folklore"]
   )
 
   prompt = ""
-  if genre == "Science Fiction":
-      prompt = "Write a science fiction story about"
-  elif genre == "Fantasy":
-      prompt = "Write a fantasy story about"
-  elif genre == "Mystery":
-      prompt = "Write a mystery story about"
+  if genre == "Poetry":
+      prompt = "Write a poetry about"
+  elif genre == "Drama":
+      prompt = "Write a drama story about"
+  elif genre == "Fiction":
+      prompt = "Write a fictional story about"
+  elif genre == "Non-Fiction":
+      prompt = "Write a non-fictional story about"
+  elif genre == "Folklore":
+      prompt = "Write a folklore story about"
 
-  # Text input for user question
-  question = st.text_input("Enter your question:")
-  
+  # Text area input for describing the literary
+  describe = st.text_area("Describe the literary you want to write:")
+
   # Button to generate response
   if st.button("Generate Response"):
       if question and context:
-          response = await generate_response(question, context)
+          response = await generate_response(question, genre, prompt)
           st.write("Response:")
           st.write(response)
       else:
-          st.error("Please enter both question and context.")
+          st.error("Please input all the required fields")
 
 #run the app
 if __name__ == "__main__":
