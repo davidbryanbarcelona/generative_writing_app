@@ -32,17 +32,22 @@ async def app():
   st.title("Creative Writing Assistant App")
   st.image('write_ai.png', width=350)
     
-  # Text area input for the context
-  context = st.text_area("Enter the context:")
+  # Text area input for describing the literary
+  desccribe = st.text_area("Describe the literary you want to write:")
     
    # User selects the type of literature to generate
-  literature_type = st.selectbox(
+  genre = st.selectbox(
       "Select the type of literature you want to generate:",
       ["Poetry", "Drama", "Fiction", "Non-Fiction", "Folklore"]
   )
 
-
-
+  prompt = ""
+    if genre == "Science Fiction":
+        prompt = "Write a science fiction story about"
+    elif genre == "Fantasy":
+        prompt = "Write a fantasy story about"
+    elif genre == "Mystery":
+        prompt = "Write a mystery story about"
 
   # Text input for user question
   question = st.text_input("Enter your question:")
