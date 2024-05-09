@@ -42,12 +42,12 @@ async def app():
   )
 
   prompt = ""
-        if genre == "Science Fiction":
-            prompt = "Write a science fiction story about"
-        elif genre == "Fantasy":
-            prompt = "Write a fantasy story about"
-        elif genre == "Mystery":
-            prompt = "Write a mystery story about"
+  if genre == "Science Fiction":
+      prompt = "Write a science fiction story about"
+  elif genre == "Fantasy":
+      prompt = "Write a fantasy story about"
+  elif genre == "Mystery":
+      prompt = "Write a mystery story about"
 
   # Text input for user question
   question = st.text_input("Enter your question:")
