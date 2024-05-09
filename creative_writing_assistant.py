@@ -59,7 +59,7 @@ async def app():
   # Button to generate response
   if st.button("Generate Response"):
       if question and context:
-          response = await generate_response(question, genre, prompt)
+          response = await generate_response(question, context, prompt)
           st.write("Response:")
           st.write(response)
       else:
