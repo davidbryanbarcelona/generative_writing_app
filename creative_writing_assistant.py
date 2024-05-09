@@ -17,7 +17,8 @@ async def generate_response(question, genre, prompt):
   completion = await client.chat.completions.create(model=model, 
       messages=[{"role": "user", "content": question}, 
                 {"role": "system", "content": genre},
-                {"role": "user", "content": prompt}])
+                {"role": "user", "content": prompt},
+                {"role": "user", "content": describe}])
   return completion.choices[0].message.content
 
 
@@ -59,8 +60,8 @@ async def app():
 
   # Button to generate response
   if st.button("Generate Response"):
-      if question and context:
-          response = await generate_response(question, genre, prompt)
+      if question and describe:
+          response = await generate_response(question, genre, prompt, describe)
           st.write("Response:")
           st.write(response)
       else:
