@@ -10,7 +10,7 @@ client = AsyncOpenAI(
     api_key=st.secrets["API_key"],
 )
 
-async def generate_response(question, genre, prompt):
+async def generate_response(question, genre, prompt, describe):
   model = "gpt-3.5-turbo"
   #model - "gpt-3.5-turbo"
 
