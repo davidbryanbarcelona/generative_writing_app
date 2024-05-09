@@ -16,7 +16,8 @@ async def generate_response(question, context):
 
   completion = await client.chat.completions.create(model=model, 
       messages=[{"role": "user", "content": question}, 
-                {"role": "system", "content": context}])
+                {"role": "system", "content": context},
+                {"role": "system", "content": prompt}])
   return completion.choices[0].message.content
 
 
