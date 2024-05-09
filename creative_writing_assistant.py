@@ -33,10 +33,10 @@ async def app():
   st.image('write_ai.png', width=350)
 
    # User selects the type of literature to generate
-    literature_type = st.selectbox(
-        "Select the type of literature you want to generate:",
-        ["Poetry", "Short Story", "Dialogue"]
-    )
+  literature_type = st.selectbox(
+      "Select the type of literature you want to generate:",
+      ["Poetry", "Short Story", "Dialogue"]
+  )
 
   # Text area input for the context
   context = st.text_area("Enter the context:")
