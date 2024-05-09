@@ -33,7 +33,7 @@ async def app():
   st.image('write_ai.png', width=350)
     
   # Text input for initialization of the setting and plot keywords
-  question = st.text_input("Hi, I'm your Creative Writing Assitant! How can I help your literary?")
+  question = st.text_area("Hi, I'm your Creative Writing Assitant! How can I help your literary?")
    
   # User selects the type of literature to generate
     # Text input for user question
