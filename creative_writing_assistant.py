@@ -31,22 +31,28 @@ async def app():
 
   st.title("Creative Writing Assistant App")
   st.image('write_ai.png', width=350)
-    
+
   # Text input for initialization of the setting and plot keywords
   question = st.text_area("Hi, I'm your Creative Writing Assitant! How can I help your literary?")
-   
+
+  # User selects the type of literature to generate
+  genre = st.selectbox(
+      "Select the type of literature you want to generate:",
+      ["Poetry", "Drama", "Fiction", "Non-Fiction", "Folklore"]
+  )
+  
   # User selects the type of literature to generate
     # Text input for user question
-  context = st.text_input("Enter the genre of the literary you want to write:")
+  context = st.text_input("Enter the keywords of the literary you want to write:")
   
   # Button to generate response
   if st.button("Generate Response"):
       if question and context:
           response = await generate_response(question, context)
-          st.write("Here is the generated literary:")
+          st.write("It's always a pleasure to help! Here is the answer to your request:")
           st.write(response)
       else:
-          st.error("Please enter both fields.")
+          st.error("Please input all the required fields.")
 
 #run the app
 if __name__ == "__main__":
