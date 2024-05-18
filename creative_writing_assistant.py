@@ -33,7 +33,7 @@ async def app():
   st.image('write_ai.png', width=350)
 
   # Text input for initialization of the setting and plot keywords
-  question = st.text_area("Hi, I'm your Creative Writing Assitant! How can I help your literary?")
+  question = st.text_input("Hi, I'm your Creative Writing Assitant! How can I help your literary?")
 
   # User selects the type of literature to generate
   genre = st.selectbox(
@@ -42,7 +42,7 @@ async def app():
   )
 
   # User inputs what plot is in its mind right now
-  plot = st.text_input("Enter the plot of the literary work on your mind right now:")
+  plot = st.text_area("Enter the plot of the literary work on your mind right now:")
   
   # User inputs neccessary keywords of the literary they want to generate
   context = st.text_input("Enter the keywords of the literary work you want to write:")
