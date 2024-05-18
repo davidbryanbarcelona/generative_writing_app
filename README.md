@@ -24,7 +24,7 @@ PenPal supports various genres, specifically the major types of literature inclu
 <br> <br> 
 ***
 ## Sample Demo
-[CCS229_PenPal_Sample_Demo_](https://youtu.be/v4alUnG-z8U)
+[CCS229_PenPal_Sample_Demo](https://youtu.be/v4alUnG-z8U)
 
 <b> David Bryan Barcelona | BSCS-3A AI <b> 
 
