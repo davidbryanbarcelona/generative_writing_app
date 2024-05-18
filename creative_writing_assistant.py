@@ -29,7 +29,7 @@ async def app():
   st.text(text)
  
 
-  st.title("PenPal: Creative Writing Assistant App")
+  st.title("PenPal")
   st.image('write_ai.png', width=350)
 
   # Text input for initialization of the setting and plot keywords
