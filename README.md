@@ -1,1 +1,1 @@
-# creative_writing_assitant_app
+# PenPal: A Creative Writing Assitant App
