@@ -40,10 +40,12 @@ async def app():
       "Select the type of literature you want to generate:",
       ["Poetry", "Drama", "Fiction", "Non-Fiction", "Folklore"]
   )
+
+  # User inputs what plot is in its mind right now
+  plot = st.text_input("Enter the plot of the literary work on your mind right now:")
   
-  # User selects the type of literature to generate
-    # Text input for user question
-  context = st.text_input("Enter the keywords of the literary you want to write:")
+  # User inputs neccessary keywords of the literary they want to generate
+  context = st.text_input("Enter the keywords of the literary work you want to write:")
   
   # Button to generate response
   if st.button("Generate Response"):
